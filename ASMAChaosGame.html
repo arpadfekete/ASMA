@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu"><head>
+<!--
+    ASMA - Arpad's Special Math Arts (Chaos Game module)
+    Copyright (C) 2026 Árpád Fekete
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title></title>
+<meta name="author" content="Fekete Árpád">
+
+<script type="text/javascript" src="ASMAChaosGame.js"></script>
+<style>
+canvas#wallpaper {
+margin: 0px;
+padding: 0px;
+position: relative;
+}
+
+.nodisplay {
+display:none;
+}
+
+.display {
+display:block;
+}
+
+body {
+margin:0px;
+padding:0px;
+overflow:auto;
+}
+h1 {
+display: inline;
+padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="mainmenu" class="display">
+<h1>What should be the size?</h1>
+<input id="imagesize_width" name="imagesize_width" type="number" value="1366" size="6">
+×
+<input id="imagesize_height" name="imagesize_height" type="number" value="768" size="6">
+(or)
+<select id="imagesize" name="imagesize" onchange="imagesize_changed()">
+<option value="choose" selected>choose...</option>
+<option value="s640x480">640×480</option>
+<option value="s1366x768">1366×768</option>
+<option value="s2732x1536">2732x1536</option>
+<option value="s8400x6000">8400×6000</option>
+</select>
+
+<h1>Color weight?</h1>
+<input id="color_weight" name="color_weight" type="number" value="1" size="3">
+
+<br>
+
+<h1>Which fractal?</h1>
+
+<select id="fractal" name="fractal">
+<option value="choose" selected>choose...</option>
+<option value="sierpinski">Sierpinski triangle</option>
+<option value="goldensi">Golden Sierpinski</option>
+<option value="silversi">Silver Sierpinski</option>
+<option value="cuberoot">Random Complex Cuberoot</option>
+</select>
+
+<h1>How many iterations?</h1>
+
+<input id="custom_iter" name="custom_iter" type="number" value="1000000" size="10">
+(or)
+<select id="iterations" name="iterations" onchange="iterations_changed()">
+<option value="choose" selected>choose...</option>
+<option value="i1000000">1000000</option>
+<option value="i10000000">10000000</option>
+<option value="i100000000">100000000</option>
+<option value="i1000000000">1000000000</option>
+</select>
+
+<button type="button" onclick="letsee()">Let's see!</button>
+<button type="button" onclick="topng()">TO PNG</button>
+
+</div>
+<br>
+
+<canvas id="wallpaper" width="640" height="480"></canvas>
+
+</body></html>
+
