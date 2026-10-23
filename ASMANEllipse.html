@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu"><head>
+<!--
+    ASMA - Arpad's Special Math Arts (N-Ellipse module)
+    Copyright (C) 2026 Árpád Fekete
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title></title>
+<meta name="author" content="Fekete Árpád">
+
+<script type="text/javascript" src="ASMANEllipse.js"></script>
+<style>
+canvas#wallpaper.display {
+margin: 0px;
+padding: 0px;
+}
+
+.nodisplay {
+display:none;
+}
+
+.display {
+display:block;
+}
+
+body {
+margin:0px;
+padding:0px;
+overflow:hidden;
+}
+</style>
+
+</head>
+<body>
+
+<div id="mainmenu" class="display">
+<h1>What should be the size of the image?</h1>
+<input id="imagesize_width" name="imagesize_width" type="number" value="1366" size="6">
+×
+<input id="imagesize_height" name="imagesize_height" type="number" value="768" size="6">
+(or)
+<select id="imagesize" name="imagesize" onchange="imagesize_changed()">
+<option value="choose" selected>choose...</option>
+<option value="s640x480">640×480</option>
+<option value="s800x600">800×600</option>
+<option value="s1024x768">1024×768</option>
+<option value="s1366x768">1366×768</option>
+<option value="screen">screen</option>
+</select>
+
+<h1>What should be the method?</h1>
+
+<select id="imagemethod" name="imagemethod" onchange="imagemethod_changed()">
+<option value="distance">distance</option>
+<option value="usermodulo">usermodulo</option>
+<option value="sindistance">sindistance</option>
+<option value="experimental">experimental</option>
+</select>
+
+<h1>What should be the parameters?</h1>
+
+Sq.dist.modulo:
+<input id="sqdist_modulo" name="sqdist_modulo" type="number" value="1000" size="6">
+Sqrt.dividedby:
+<input id="sqrt_dividedby" name="sqrt_dividedby" type="number" value="15" size="6">
+Res.modulo:
+<input id="res_modulo" name="res_modulo" type="number" value="360" size="6">
+<br><br>
+
+<button type="button" onclick="letsee()">Let's see!</button>
+
+</div>
+
+<canvas id="wallpaper" width="1366" height="768" class="nodisplay"></canvas>
+
+</body></html>
+
